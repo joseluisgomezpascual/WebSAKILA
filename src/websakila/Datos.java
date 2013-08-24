@@ -37,7 +37,6 @@ public class Datos extends HttpServlet {
 		DatosBEAN dbj=new DatosBEAN();
 		String nombre=request.getParameter("nombre");
 		String password=request.getParameter("pass");		
-		Statement st = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
 		try{

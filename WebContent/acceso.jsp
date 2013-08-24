@@ -8,12 +8,22 @@
 </head>
 <body>
 <jsp:useBean id="DatosBEAN" class="websakila.DatosBEAN" scope="request"/>
-Bienvenido <jsp:getProperty property="nombre" name="DatosBEAN"/><br>
-<form>
+<p align="left">Bienvenido <jsp:getProperty property="nombre" name="DatosBEAN"/></p><p align="right"><a href="index.html">Logout</a></p>
+<form action="Busqueda" method="post">
 <table>
-
+<tr>
+<td>Buscar </td>
+<td><input type="text" name="buscar"></td>
+</tr>
+<tr>
+<td><input type="radio" name="opciones" value="Actores">Actores</td>
+</tr>
+<tr>
+<td><input type="radio" name="opciones" value="Peliculas">Películas</td>
+</tr>
+<td><input type="submit" value="Enviar"></td>
+</tr>
 </table>
 </form>
-<a href="index.html">Logout</a>
 </body>
 </html>
