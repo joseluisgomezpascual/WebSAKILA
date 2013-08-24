@@ -41,12 +41,14 @@ public class Datos extends HttpServlet {
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost/sakila?user=root&password=root");
 			Statement st = con.createStatement();
-			ResultSet rs = st.executeQuery("SELECT * FROM users WHERE login='jose'");
+			ResultSet rs = st.executeQuery("SELECT COUNT(*) FROM users WHERE login='"+nombre+"'");
 			while(rs.next()){
 				if(rs.getInt(1)==1){
+					dbj.setNombre(nombre);
 					request.setAttribute("DatosBEAN", dbj);
 					request.getRequestDispatcher("loginok.jsp").forward(request,response);
 				}else{
+					dbj.setNombre(nombre);
 					request.setAttribute("DatosBEAN", dbj);
 					request.getRequestDispatcher("loginnook.jsp").forward(request,response);
 				}
