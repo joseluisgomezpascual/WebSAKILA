@@ -51,7 +51,7 @@ public class Datos extends HttpServlet {
 				if(rs.getInt(1)==1){
 					dbj.setNombre(nombre);					
 					request.setAttribute("DatosBEAN", dbj);
-					request.getRequestDispatcher("loginok.jsp").forward(request,response);
+					request.getRequestDispatcher("acceso.jsp").forward(request,response);
 				}else{
 					dbj.setNombre(nombre);					
 					request.setAttribute("DatosBEAN", dbj);
@@ -64,10 +64,7 @@ public class Datos extends HttpServlet {
 		}catch(ClassNotFoundException clex){
 			System.out.println(clex);
 		}
-//		dbj.setNombre(nombre);
-//		dbj.setPassword(password);
-//		request.setAttribute("DatosBEAN", dbj);
-//		request.getRequestDispatcher("resultado.jsp").forward(request,response);		
+	
 	}
 
 }

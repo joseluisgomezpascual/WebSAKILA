@@ -4,11 +4,16 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Acceso</title>
 </head>
 <body>
 <jsp:useBean id="DatosBEAN" class="websakila.DatosBEAN" scope="request"/>
-El usuario <jsp:getProperty property="nombre" name="DatosBEAN"/> no está autorizado.<br>
-<a href="index.html">Inicio</a>
+Bienvenido <jsp:getProperty property="nombre" name="DatosBEAN"/><br>
+<form>
+<table>
+
+</table>
+</form>
+<a href="index.html">Logout</a>
 </body>
 </html>
