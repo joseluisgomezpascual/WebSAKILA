@@ -5,19 +5,19 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Actores</title>
+<title>Peliculas</title>
 </head>
 <body>
 <jsp:useBean id="BusquedaBEAN" class="websakila.BusquedaBEAN" scope="request"/>
 <%
 out.print("<table>");
-if(BusquedaBEAN.getFirstName().size()==0){
+if(BusquedaBEAN.getTitle().size()==0){
 	out.print("No se han encontrado resultados");
 }else{
-	for(int i=0;i<BusquedaBEAN.getFirstName().size();i++){
-		out.print("<tr><td>"+BusquedaBEAN.getFirstName().get(i)+"</td><td>"+BusquedaBEAN.getLastName().get(i)+"</td></tr>");
+	for(int i=0;i<BusquedaBEAN.getTitle().size();i++){
+		out.print("<tr><td>"+BusquedaBEAN.getTitle().get(i)+"</td></tr>");
 	}
-	out.print("<tr><td>Número de resultados: </td><td>"+BusquedaBEAN.getFirstName().size()+"</td></tr>");
+	out.print("<tr><td>Número de resultados: </td><td>"+BusquedaBEAN.getTitle().size()+"</tr>");
 }
 out.print("</table>");
 %>

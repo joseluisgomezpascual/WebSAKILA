@@ -16,7 +16,7 @@
 <td><input type="text" name="buscar"></td>
 </tr>
 <tr>
-<td><input type="radio" name="opciones" value="Actores">Actores</td>
+<td><input type="radio" name="opciones" value="Actores" checked>Actores</td>
 </tr>
 <tr>
 <td><input type="radio" name="opciones" value="Peliculas">Películas</td>
