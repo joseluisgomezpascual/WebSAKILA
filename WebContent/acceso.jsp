@@ -7,10 +7,11 @@
 <title>Acceso</title>
 </head>
 <body>
-<jsp:useBean id="DatosBEAN" class="websakila.DatosBEAN" scope="request"/>
-<p align="left">Bienvenido <jsp:getProperty property="nombre" name="DatosBEAN"/></p><p align="right"><a href="index.html">Logout</a></p>
-<form action="Busqueda" method="post">
 <table>
+<jsp:useBean id="DatosBEAN" class="websakila.DatosBEAN" scope="request"/>
+<tr>
+<td>Bienvenido <jsp:getProperty property="nombre" name="DatosBEAN"/></td><td><a href="index.html">Logout</a></td>
+<form action="Busqueda" method="post">
 <tr>
 <td>Buscar </td>
 <td><input type="text" name="buscar"></td>
