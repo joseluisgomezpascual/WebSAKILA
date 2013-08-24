@@ -36,23 +36,28 @@ public class Datos extends HttpServlet {
 		// TODO Auto-generated method stub
 		DatosBEAN dbj=new DatosBEAN();
 		String nombre=request.getParameter("nombre");
-		String password=request.getParameter("pass");						
+		String password=request.getParameter("pass");		
+		Statement st = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
 		try{
 			Class.forName("com.mysql.jdbc.Driver");
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost/sakila?user=root&password=root");
-			Statement st = con.createStatement();
-			ResultSet rs = st.executeQuery("SELECT COUNT(*) FROM users WHERE login='"+nombre+"'");
-			while(rs.next()){
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost/sakila?user=root&password=root");			
+			ps = con.prepareStatement("SELECT COUNT(*) FROM users WHERE (login=?) AND (password=?)");			
+			ps.setString(1, nombre);			
+			ps.setString(2, password);
+			rs = ps.executeQuery();
+			while(rs.next()){				
 				if(rs.getInt(1)==1){
-					dbj.setNombre(nombre);
+					dbj.setNombre(nombre);					
 					request.setAttribute("DatosBEAN", dbj);
 					request.getRequestDispatcher("loginok.jsp").forward(request,response);
 				}else{
-					dbj.setNombre(nombre);
+					dbj.setNombre(nombre);					
 					request.setAttribute("DatosBEAN", dbj);
 					request.getRequestDispatcher("loginnook.jsp").forward(request,response);
 				}
-			}			
+			}		
 		con.close();
 		}catch(SQLException sqlex){
 			System.out.println(sqlex);
