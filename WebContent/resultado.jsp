@@ -8,7 +8,7 @@
 </head>
 <body>
 <jsp:useBean id="DatosBEAN" class="websakila.DatosBEAN" scope="request"/>
-Nombre <jsp:getProperty property="nombre" name="DatosBEAN"/>
-Apellidos <jsp:getProperty property="apellidos" name="DatosBEAN"/>
+Nombre <jsp:getProperty property="nombre" name="DatosBEAN"/><br>
+Apellidos <jsp:getProperty property="password" name="DatosBEAN"/>
 </body>
 </html>
